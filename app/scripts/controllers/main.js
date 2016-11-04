@@ -1,8 +1,7 @@
 'use strict';
-
-angular.module('todoListApp')
-.controller('mainCtrl', function($scope, dataService){
   
+mainController.$inject = ['dataService'];
+function mainController(dataService) {
   dataService.getTodos(function(response){
     var todos = response.data.todos;  
     $scope.todos =  todos;
@@ -12,5 +11,6 @@ angular.module('todoListApp')
     $scope.todos.unshift({name: "This is a new todo.",
                       completed: false});
   };
-  
-})
+}
+
+module.exports = mainController;
