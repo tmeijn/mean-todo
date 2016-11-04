@@ -1,7 +1,7 @@
 'use strict';
 
-TodoController.$inject = ['dataService'];
-function TodoController(dataService) {
+TodoController.$inject = ['$scope', 'dataService'];
+function TodoController($scope, dataService) {
   $scope.deleteTodo = function(todo, index) {
     $scope.todos.splice(index, 1);
     dataService.deleteTodo(todo);

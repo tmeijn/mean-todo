@@ -1,7 +1,7 @@
 'use strict';
   
-mainController.$inject = ['dataService'];
-function mainController(dataService) {
+mainController.$inject = ['$scope', 'dataService'];
+function mainController($scope, dataService) {
   dataService.getTodos(function(response){
     var todos = response.data.todos;  
     $scope.todos =  todos;

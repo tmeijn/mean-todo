@@ -31,8 +31,8 @@ webpackJsonp([0],[
 
 	'use strict';
 	  
-	mainController.$inject = ['dataService'];
-	function mainController(dataService) {
+	mainController.$inject = ['$scope', 'dataService'];
+	function mainController($scope, dataService) {
 	  dataService.getTodos(function(response){
 	    var todos = response.data.todos;  
 	    $scope.todos =  todos;
@@ -52,8 +52,8 @@ webpackJsonp([0],[
 
 	'use strict';
 
-	TodoController.$inject = ['dataService'];
-	function TodoController(dataService) {
+	TodoController.$inject = ['$scope', 'dataService'];
+	function TodoController($scope, dataService) {
 	  $scope.deleteTodo = function(todo, index) {
 	    $scope.todos.splice(index, 1);
 	    dataService.deleteTodo(todo);
